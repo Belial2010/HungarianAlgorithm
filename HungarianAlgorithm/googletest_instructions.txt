@@ -90,9 +90,11 @@ C++ Build
 				
 To create a Run configuration for GTest, click Run As on the project, select the debug
 categoty, then select the GTest binary. This creates a run configuration for Google test
-which will run in the command line. To attach it to the googltest eclipse pluging, 
+which will run in the command line. To attach it to the googltest eclipse plugin,
+select Run Configutations. In the C/C++ Application header, there should be 3 run configurations now, a release, a debug and a GTest Run Configuration.  Ensure each has the "Select configuration using 'C/C++ Application'" check box selected for the Build Configuration setting.
 
-				
+
+Below in the C/C++ Unit header you need to create a new Unit test configuration.Refresh the directory if needed to make sure the GTest binary is showing. Select it, Choose GTest from the build configuration window, check the bow below for "Select configuration...". Now go to the C/C++ Testing tab and select the runner as googletest and youre done.
 				
 				
 				
