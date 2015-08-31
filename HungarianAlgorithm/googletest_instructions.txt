@@ -62,18 +62,36 @@ Select the GTest build by running it. Then select the C++ file containing the ma
 when your build normally runs. Right click on that file(while GTest is the active build 
 configutation) Resource Configurations->Exclude from build, and then select GTest.
 				
+Right click on the ./test directory and in the 
 				
+C++ Build
+	Settings
+		UNCHECK EXCLUDE RESOURCE FROM BUILD
+		GCC C++ Compiler
+		-std=c++1y -DDEBUG -I"/home/theodore/git/HungarianAlgorithm/HungarianAlgorithm/gtest_src" -I"/home/theodore/git/HungarianAlgorithm/HungarianAlgorithm/src" -O0 -g3 -Wall -c -fmessage-length=0
+			Includes
+				Include paths(-I) => "${workspace_loc:/${ProjName}/gtest_src}"
+				Include paths(-I) => "${workspace_loc:/${ProjName}/src}"
 				
+
+
+Right click on the ./gtest_src directory and set the following settings
+C++ Build
+	Settings
+		CHECK EXCLUDE RESOURCE FROM BUILD	
+		GCC C++ Compiler
+		-std=c++1y -DDEBUG -I"/home/theodore/git/HungarianAlgorithm/HungarianAlgorithm/gtest_src" -O0 -g3 -Wall -c -fmessage-length=0
+			Dialect 
+				Language standard => ISO C++1y (-std=c++1y)
+			Preprocessor
+				Defined symbols(-D) => DEBUG
+			Includes
+				Include paths(-I) => "${workspace_loc:/${ProjName}/gtest_src}"
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+To create a Run configuration for GTest, click Run As on the project, select the debug
+categoty, then select the GTest binary. This creates a run configuration for Google test
+which will run in the command line. To attach it to the googltest eclipse pluging, 
+
 				
 				
 				
