@@ -79,7 +79,7 @@ int main() {
 	/*
 	 * Run the MINIMIZATION hungarian algorithm on the input matrix, regardless of square-ness
 	 */
-	hung_res_t ans = HungarianUtility::Instance().runHungarian(matrix, false);
+	ans = HungarianUtility::Instance().runHungarian(matrix, false);
 
 #ifdef DEBUG
 	HungarianUtility::Instance().printMatrix(matrix,"Final Matrix State=");

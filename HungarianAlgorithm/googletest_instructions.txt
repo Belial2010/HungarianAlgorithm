@@ -1,0 +1,80 @@
+-Include 3 directories, compressed in googletest_Tzanetos_HA.zip, to the Eclipse project at the same level as /src/.
+-Install GDB and googltest plugins for Eclipse
+
+
+There should be 3 Eclipse build configurations, Release, Debug, and GTest
+
+1)Release Configuration Settings:
+
+C++ Build
+	Settings
+		GCC C++ Compiler
+		g++ -std=c++1y -UDEBUG -O3 -Wall -c -fmessage-length=0
+			Dialect 
+				Language standard => ISO C++1y (-std=c++1y)
+			Preprocessor
+				Undefined symbols(-U) => DEBUG
+			Optimization
+				Optimization Level => Optimize most(-O3)
+			Debugging
+				Debug Level => None
+				
+2)Debug Configuration Settings:
+
+C++ Build
+	Settings
+		GCC C++ Compiler
+		g++ -std=c++1y -DDEBUG -O0 -g3 -Wall -c -fmessage-length=0
+			Dialect 
+				Language standard => ISO C++1y (-std=c++1y)
+			Preprocessor
+				Defined symbols(-D) => DEBUG
+			Optimization
+				Optimization Level => None(-O0)
+			Debugging
+				Debug Level => Maximum(-g3)
+				
+				
+3)GTest Configuration Settings:
+
+C++ Build
+	Settings
+		GCC C++ Compiler
+		g++ -std=c++1y -DDEBUG -I"/home/theodore/git/HungarianAlgorithm/HungarianAlgorithm/src" -O0 -g3 -Wall -c -fmessage-length=0
+			Dialect 
+				Language standard => ISO C++1y (-std=c++1y)
+			Preprocessor
+				Defined symbols(-D) => DEBUG
+			Includes
+				Include paths(-I) => "${workspace_loc:/${ProjName}/src}"
+			Optimization
+				Optimization Level => None(-O0)
+			Debugging
+				Debug Level => Maximum(-g3)
+		GCC Linker
+		g++ -L"/home/theodore/git/HungarianAlgorithm/HungarianAlgorithm/gtest_lib"
+			Libraries
+				Libraries(-l) => gtest
+				Libraries(-l) => pthread
+				Library search path (-L) => "${workspace_loc:/${ProjName}/gtest_lib}"
+			
+Select the GTest build by running it. Then select the C++ file containing the main() function
+when your build normally runs. Right click on that file(while GTest is the active build 
+configutation) Resource Configurations->Exclude from build, and then select GTest.
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
